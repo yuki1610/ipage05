@@ -1,23 +1,95 @@
- 
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans" class="ua-windows ua-opera">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>主页</title>
-    <link rel="stylesheet" type="text/css" href="1.css">
-	</head>
+    <link href="1.css" rel="stylesheet" type="text/css"></head>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
   <body>
     <div id="wrapper">
       <div id="toper">
-        <span id="icp" class="fleft gray-link">本首页copy的豆瓣小组 搜索页面……想换一个，这个添加网址不方便……</span>
-        <span class="fright">
-          <a href="http://weibo.cn/">剁手不如刷微博 摸鱼不如写稿 更新了吗 文稿还欠着呢</a></span>
+             <!-- 搜索引擎 -->
+<div id="searchMod" class="searchMod" align="center">
+
+<form name="search_form" onsubmit="return gowhere(this)">
+	<table class="search_type" align=center border=0 cellPadding=0 cellSpacing=0><tr><td class="search_type">
+		<INPUT name=myselectvalue type=hidden value=1 />
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=1 />必应
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=2 />好搜
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=3 />百度
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=4 />贴吧
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=5 />图片
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=6 />淘宝
+		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=7 />京东
+	</TD></TR></table>
+
+	<table align=center border=0 cellPadding=0 cellSpacing=0>
+			<input id="search_wd" class="search_wd" type=text autofocus="autofocus" maxlength="100" value="" />
+			<input id="search_go" class="search_go" type="submit" value="搜索" />
+	</table>
+</form>
+
+<SCRIPT language=javascript>
+var search_default = 2 //设定默认搜索，与myselect标签中的value值对应
+document.getElementsByName("myselectvalue")[0].value= search_default
+
+var radio_checked = document.getElementsByName("myselect");
+for(var i=0;i<radio_checked.length;i++)
+{
+	if(radio_checked[i].value==search_default)
+	radio_checked[i].checked = "checked";
+}
+
+function gowhere(formname)
+{
+var NewTab = false;  //true =>新标签打开； false =>当前标签打开
+var wd = document.getElementById("search_wd").value;
+var url;
+//以下自定义搜索引擎
+if (formname.myselectvalue.value == "1"){
+	url = "http://www.bing.com/search?q=";
+}
+if (formname.myselectvalue.value == "2"){
+	url = "http://www.haosou.com/s?ie=utf-8&q=";
+}
+if (formname.myselectvalue.value == "3"){
+	url = "https://www.baidu.com/s?wd=";
+}
+if (formname.myselectvalue.value == "4"){
+	url = "http://tieba.baidu.com/f?kw=";
+}
+if (formname.myselectvalue.value == "5"){
+	url = "http://www.bing.com/images/search?q=";
+}
+if (formname.myselectvalue.value == "6"){
+	url = "http://s.taobao.com/search?q=";
+}
+if (formname.myselectvalue.value == "7"){
+	url = "http://search.jd.com/Search?enc=utf-8&keyword=";
+}
+
+if(wd !== "") {
+	url=url+wd;
+	if(NewTab){
+		window.open(url,"_blank");
+		document.getElementById("search_wd").value = "";
+	}
+	else {
+		window.location.href = url;
+	}
+}
+return false;
+}
+</SCRIPT>
+
+</div>
       </div>
       <div id="content">
         <h1></h1>
         <div class="grid-16-8 clearfix">
           <div class="article">
-            <h2>天街小雨润如酥</h2>
+             <h2>天街小雨润如酥</h2>
             <ul class="topic-list">
                <li><a href="http://www.duxiu.com/auth/shoutulogin.jsp">读秀</a></li>
               <li><a href="http://www.shicimingju.com/">诗词</a></li>
@@ -44,60 +116,29 @@
             <h2>绝胜烟柳满皇都</h2>
             <ul class="topic-list">
             <li><a href="http://sou.zhaopin.com">招聘</a></li>
-			<li><a href="http://www.oiegg.com/forumdisplay.php?fid=761">蛋蛋</a></li>
-		    <li><a href="https://www.zhihu.com/collection/68663553">歧路多花香</a></li>
-		    <li><a href="http://www.newsmth.net/frames.html">水木</a></li>
+			<li><a href="http://bj.58.com">兼职</a></li>
+			<li><a href="http://www.shiyebian.net/beijing/xinxi/">事业单位</a></li>
+			<li><a href="http://www.51job.com/" >51Job</a></li>
             </ul>
           </div>
-          <div class="aside">
-             <section id="search" class="top">
-            <div class="wrapper">
-             <form id="search-form" name="searchform" method="get" class="form-inline" action="http://www.baidu.com/baidu" >
-                <div id="search-control">
-                  <div class="form-group">
-                    <input name=tn type=hidden value=baidu>
-         			 <input id="searchinput" type="text" name="word" class="form-control input-lg" onmouseover="this.focus()" onfocus="this.select()" placeholder="嗷喵">
-                    <input type="hidden" name="ie" value="UTF-8">
-                    <input type="hidden" name="oe" value="UTF-8">
-                  <button type="submit" value="百度搜索" class="btn btn-default btn-lg">百度</button>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="searchcheck" value='1' checked="checked"> 多搜</label>
-                
-                 
-                </div>
-                <ul id="search-engine-list">
-                  <li><a href="#" onclick="javascript:check('sogou');return false;">搜狗</a></li>
-                  <li><a href="#" onclick="javascript:check('so');return false;">360搜索</a></li>
-                  <li class="r"><a href="#" onclick="javascript:check('google-hk');return false;">Google</a></li>
-                  <li><a href="#" onclick="javascript:check('huihui');return false;">惠惠比价</a></li>
-                  <li><a href="#" onclick="javascript:check('etao');return false;">一淘网</a></li>
-                  <li><a href="#" onclick="javascript:check('sogou-ditu');return false;">搜狗地图</a></li>
-                  <li><a href="#" onclick="javascript:check('ip138');return false;">手机号码</a></li>
-                  <li><a href="#" onclick="javascript:check('qichacha');return false;">企查查</a></li>
-                  <li><a href="#" onclick="javascript:check('wikipedia');return false;">Wikipedia</a></li>
-                  <li><a href="#" onclick="javascript:check('abbr');return false;">查缩写</a></li>
-                  <li><a href="#" onclick="javascript:check('youdao-dict');return false;">有道词典</a></li>
-                  <li class="r"><a href="#" onclick="javascript:check('google-trans');return false;">Google翻译</a></li>
-                  <li><a href="#" onclick="javascript:check('douban');return false;">豆瓣</a></li>
-                  <li><a href="#" onclick="javascript:check('google-scholar');return false;">Google学术</a></li>
-                  <li><a href="#" onclick="javascript:check('cnki');return false;">CNKI</a></li>
-                  <li><a href="#" onclick="javascript:check('wanfang');return false;">万方</a></li>
-                </ul>
-              </form>
-       </ul>
-          </section>
           
+          <div class="aside">
+            <ul class="topic-list">
+              <li>
+                  <li><a href="http://open.163.com/" >网易公开课</a></li>
+                <li><a href="http://www.ted.com/open/" >TED</a></li>
+                <li><a href="http://music.163.com/" >网易云音乐</a></li>
+               <li><a href="http://www.ximalaya.com/" >喜马拉雅</a></li>
+            </ul>
           </div>
+          <div class="extra"></div>
         </div>
       </div>
       <div id="footer">
         <span id="icp" class="fleft gray-link">最是一年春好处</span>
         <span class="fright">
-          <a href="https://github.com/yuki1610/ipage05/blob/master/index.html">纯自用的挫主页抚摸不要怕 做的不好就不好了嗯</a></span>
+          <a href="https://www.douban.com/about">关于豆瓣</a></span>
       </div>
     </div>
-        <script src="jquery-2.1.3.min.js"></script>
-    <script src="bootstrap.min.js"></script>
-    <script src="searchegine.js"></script>
   </body>
 </html>
