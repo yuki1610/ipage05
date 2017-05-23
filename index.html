@@ -50,16 +50,64 @@
             </ul>
           </div>
           <div class="aside">
-            <form action="http://www.sogou.com/web" name="sogou_queryform">
-              <tr>
-                <td valign="top">
-                  <a href="http://www.gougou.com/search?search=%s&id=1"></a>
-                </td>
-                <td>
-                  <input type="text" size="32" name="query">
-                  <input type="Submit" value=" 搜 索 "></td>
-              </tr>
-            </form>
+       <form id="search-form" name="searchform" method="get" class="form-inline" action="http://www.baidu.com/baidu" >
+                <div id="search-control">
+                  <div class="form-group">
+                    <input name=tn type=hidden value=baidu>
+                    <label class="sr-only" for="searchinput">Search Input</label>
+                    <input id="searchinput" type="text" name="word" class="form-control input-lg" onmouseover="this.focus()" onfocus="this.select()" placeholder="输入文本，按回车用百度搜索或点击以下引擎进行搜索。">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <input type="hidden" name="oe" value="UTF-8">
+                  <button type="submit" value="百度搜索" class="btn btn-default btn-lg">百度</button>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="searchcheck" value='1' checked="checked"> 多搜</label>
+                  </div>
+                  </div>
+                </div>
+                <ul id="search-engine-list">
+                  <li><a href="#" onclick="javascript:check('bing');return false;">必应</a></li>
+                  <li><a href="#" onclick="javascript:check('sogou');return false;">搜狗</a></li>
+                  <li><a href="#" onclick="javascript:check('so');return false;">360搜索</a></li>
+                  <li class="r"><a href="#" onclick="javascript:check('google-hk');return false;">Google</a></li>
+                  <li><a href="#" onclick="javascript:check('yahoo-en');return false;">Yahoo</a></li>
+                  <li><a href="#" onclick="javascript:check('ask');return false;">Ask</a></li>
+                  <li><a href="#" onclick="javascript:check('baidu-music');return false;">百度音乐</a></li>
+                  <li><a href="#" onclick="javascript:check('baidu-video');return false;">百度视频</a></li>
+                  <li><a href="#" onclick="javascript:check('huihui');return false;">惠惠比价</a></li>
+                  <li><a href="#" onclick="javascript:check('etao');return false;">一淘网</a></li>
+                  <li><a href="#" onclick="javascript:check('amap');return false;">高德地图</a></li>
+                  <li><a href="#" onclick="javascript:check('sogou-ditu');return false;">搜狗地图</a></li>
+                  <li><a href="#" onclick="javascript:check('ip138');return false;">手机号码</a></li>
+                  <li><a href="#" onclick="javascript:check('qichacha');return false;">企查查</a></li>
+                  <li><a href="#" onclick="javascript:check('wikipedia-zh');return false;">维基百科</a></li>
+                  <li><a href="#" onclick="javascript:check('wikipedia');return false;">Wikipedia</a></li>
+                  <li><a href="#" onclick="javascript:check('hudong');return false;">互动百科</a></li>
+                  <li><a href="#" onclick="javascript:check('abbr');return false;">查缩写</a></li>
+                  <li><a href="#" onclick="javascript:check('dict-cn');return false;">海词</a></li>
+                  <li><a href="#" onclick="javascript:check('youdao-dict');return false;">有道词典</a></li>
+                  <li><a href="#" onclick="javascript:check('iciba');return false;">爱词霸</a></li>
+                  <li><a href="#" onclick="javascript:check('bing-dict');return false;">必应词典</a></li>
+                  <li><a href="#" onclick="javascript:check('cnki-trans');return false;">CNKI翻译</a></li>
+                  <li><a href="#" onclick="javascript:check('urban-dict');return false;">Urban Dict</a></li>
+                  <li class="r"><a href="#" onclick="javascript:check('google-trans');return false;">Google翻译</a></li>
+                  <li><a href="#" onclick="javascript:check('baidu-fanyi');return false;">百度翻译</a></li>
+                  <li><a href="#" onclick="javascript:check('youdao-trans');return false;">有道翻译</a></li>
+                  <li><a href="#" onclick="javascript:check('douban');return false;">豆瓣</a></li>
+                  <li><a href="#" onclick="javascript:check('google-scholar');return false;">Google学术</a></li>
+                  <li><a href="#" onclick="javascript:check('baidu-wenku');return false;">百度文库</a></li>
+                  <li><a href="#" onclick="javascript:check('doc88');return false;">道客巴巴</a></li>
+                  <li><a href="#" onclick="javascript:check('docin');return false;">豆丁网</a></li>
+                  <li><a href="#" onclick="javascript:check('zaoshu');return false;">枣书</a></li>
+                  <li><a href="#" onclick="javascript:check('nstl');return false;">科技图书</a></li>
+                  <li><a href="#" onclick="javascript:check('cnki');return false;">CNKI</a></li>
+                  <li><a href="#" onclick="javascript:check('wanfang');return false;">万方</a></li>
+                  <li><a href="#" onclick="javascript:check('cqvip');return false;">维普</a></li>
+                  <li><a href="#" onclick="javascript:check('onemine');return false;">OneMine</a></li>
+                  <li><a href="#" onclick="javascript:check('arxiv');return false;">arXiv.org</a></li>
+                  <li><a href="#" onclick="javascript:check('springerlink');return false;">SpringerLink</a></li>
+                  <li><a href="#" onclick="javascript:check('wolfram-alpha');return false;">Wolfram</a></li>
+                </ul>
+              </form>
     
             <ul class="topic-list">
               <li>
@@ -70,21 +118,10 @@
                 <a href="http://bbs.kafan.cn/forum-215-1.html">卡饭</a></li>
             </ul>
           </div>
+		
           <div class="extra">八组看来的方法：景甜坐直了吗？<br>
 		
-今日份的工作完成了吗？<br>
-不焦虑的破解光剑：提前做，提早做，早完早好。<br>
 
-摸猫了吗，哄男票了吗？<br>
-男人要哄。嗷喵。<br>
-
-主线任务坚持做 <br>
-积攒人品升考验值<br>
-掉落及时捡<br>
-日常随意刷<br>
-少去八组，少去晋江，多写文<br>
-
-	
       </div>
         </div>
       </div>
