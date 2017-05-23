@@ -286,3 +286,30 @@ input[type=text]:focus,input[type=password]:focus,textarea:focus {
 .fright {
 	float: right
 }
+section ul>li {
+	display:inline-block;
+	float:left;
+	margin:0;
+	padding:0 10px
+}
+.top {
+	padding-top:0px;
+}
+#search ul {
+	line-height:2em;
+	padding:10px 0
+}
+#search #search-control {
+	padding:5px;
+	margin-bottom:0;
+	text-align:center;
+	background-color:none
+}
+#search #searchinput {
+	background-color:#fdfefb
+}
+#search a {
+	padding:3px 6px;
+	border:1px solid #dbdbdb;
+	border-radius:5px
+}
