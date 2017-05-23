@@ -1,0 +1,92 @@
+function check(select) {
+key = document.searchform.word.value;
+if (document.searchform.searchcheck.checked == true && key != '') {
+		switch(select) {
+			case 'bing': window.open(encodeURI('http://cn.bing.com/search?q='+key));break;
+			case 'sogou': window.open(encodeURI('http://www.sogou.com/web?query='+key+'&ie=utf8&oe=utf-8'));break;
+			case 'so': window.open(encodeURI('http://www.so.com/s?q='+key));break;
+			case 'google-hk': window.open(encodeURI('https://www.google.com.hk/search?hl=zh-CN&q='+key));break;
+			case 'yahoo-en': window.open(encodeURI('http://search.yahoo.com/search?p='+key));break;
+			case 'ask': window.open(encodeURI('http://www.ask.com/web?q='+key));break;
+			case 'baidu-music': window.open(encodeURI('http://music.baidu.com/search?key='+key));break;
+			case 'baidu-video': window.open(encodeURI('http://video.baidu.com/v?ie=utf-8&word='+key));break;
+			case 'huihui': window.open(encodeURI('http://www.huihui.cn/search?q='+key));break;
+			case 'etao': window.open(encodeURI('http://s.etao.com/search?q='+key));break;
+			case 'amap': window.open(encodeURI('http://ditu.amap.com/search?query='+key+'&city=100000'));break;
+			case 'sogou-ditu': window.open(encodeURI('http://map.sogou.com/?IPLOC=CN1100#lq='+key));break;
+			case 'ip138': window.open(encodeURI('http://www.ip138.com:8080/search.asp?action=mobile&mobile='+key));break;
+			case 'qichacha': window.open(encodeURI('http://www.qichacha.com/search?key='+key));break;
+			case 'wikipedia-zh': window.open(encodeURI('http://zh.wikipedia.org/w/index.php?title='+key));break;
+			case 'wikipedia': window.open(encodeURI('http://en.wikipedia.org/w/index.php?title='+key));break;
+			case 'hudong': window.open(encodeURI('http://www.baike.com/wiki/'+key));break;
+			case 'abbr': window.open(encodeURI('http://www.abbreviations.com/abbreviation/'+key));break;
+			case 'dict-cn': window.open(encodeURI('http://dict.cn/'+key));break;
+			case 'youdao-dict': window.open(encodeURI('http://dict.youdao.com/search?q='+key+'&ue=utf8'));break;
+			case 'iciba': window.open(encodeURI('http://www.iciba.com/'+key));break;
+			case 'bing-dict': window.open(encodeURI('http://cn.bing.com/dict/search?q='+key));break;
+			case 'cnki-trans': window.open(encodeURI('http://dict.cnki.net/dict_result.aspx?searchword='+key));break;
+			case 'urban-dict': window.open(encodeURI('http://www.urbandictionary.com/define.php?term='+key));break;
+			case 'google-trans': window.open(encodeURI('http://translate.google.cn/#auto/auto/'+key));break;
+			case 'baidu-fanyi': window.open(encodeURI('http://fanyi.baidu.com/#auto2auto|'+key));break;
+			case 'youdao-trans': window.open(encodeURI('https://fanyi.youdao.com/translate?i='+key));break;
+			case 'douban': window.open(encodeURI('http://www.douban.com/search?q='+key));break;
+			case 'google-scholar': window.open(encodeURI('http://scholar.google.com.hk/scholar?hl=zh-CN&q='+key));break;
+			case 'baidu-wenku': window.open(encodeURI('http://wenku.baidu.com/search?ie=utf-8&word='+key));break;
+			case 'doc88': window.open(encodeURI('http://www.doc88.com/tag/'+key));break;
+			case 'docin': window.open(encodeURI('http://www.docin.com/search.do?searchcat=2&searchType_banner=p&nkey='+key));break;
+			case 'zaoshu': window.open(encodeURI('http://zaoshu.so/s?q='+key));break;
+			case 'nstl': window.open(encodeURI('http://www.nstl.gov.cn/NSTL/facade/search/retrieve.do?searchConditionCount=4&searchConditionIndex=2&sf1=&kw1='+key+'&lc1=and&sf2=&kw2=&lc2=and&sf3=&kw3=&lc3=and&sf4=&kw4=&one=on&chkdoctype=J02&chkdoctype=C02&chkdoctype=D02&chkdoctype=R02&chkdoctype=G02&chkdoctype=K02&sc.libCode=&sc.searchScopeAll=1&sc.dateScope=&startDate=&endDate=&pubs=&pube=&sc.searchMode=true&sc.pageSize=10'));break;
+			case 'cnki': window.open(encodeURI('http://search.cnki.net/search.aspx?q='+key));break;
+			case 'wanfang': window.open(encodeURI('http://s.wanfangdata.com.cn/Paper.aspx?q='+key));break;
+			case 'cqvip': window.open(encodeURI('http://www.cqvip.com/main/search.aspx?k='+key));break;
+			case 'onemine': window.open(encodeURI('http://www.onemine.org/search/index.cfm?fullText='+key+'&submit.x=0&submit.y=0&submit=submit'));break;
+			case 'arxiv': window.open(encodeURI('http://arxiv.org/find/all/1/all:+'+key));break;
+			case 'springerlink': window.open(encodeURI('http://link.springer.com/search?query='+key));break;
+			case 'wolfram-alpha': window.open(encodeURI('http://www.wolframalpha.com/input/?i='+key));break;
+		}
+	} else {
+		switch(select) {
+			case 'bing': window.open('http://cn.bing.com/');break;
+			case 'sogou': window.open('http://www.sogou.com/');break;
+			case 'so': window.open('http://www.so.com/');break;
+			case 'google-hk': window.open('https://www.google.com.hk/');break;
+			case 'yahoo-en': window.open('http://search.yahoo.com/');break;
+			case 'ask': window.open('http://www.ask.com/');break;
+			case 'baidu-music': window.open('http://music.baidu.com/');break;
+			case 'baidu-video': window.open('http://video.baidu.com/');break;
+			case 'huihui': window.open('http://www.huihui.cn/');break;
+			case 'etao': window.open('http://www.etao.com/');break;
+			case 'amap': window.open('http://www.amap.com/');break;
+			case 'sogou-ditu': window.open('http://map.sogou.com/');break;
+			case 'ip138': window.open('http://www.ip138.com/');break;
+			case 'qichacha': window.open('http://www.qichacha.com/');break;
+			case 'wikipedia-zh': window.open('http://zh.wikipedia.org/');break;
+			case 'wikipedia': window.open('http://en.wikipedia.org/');break;
+			case 'hudong': window.open('http://www.baike.com/');break;
+			case 'abbr': window.open('http://www.abbreviations.com/');break;
+			case 'dict-cn': window.open('http://dict.cn/');break;
+			case 'youdao-dict': window.open('http://dict.youdao.com/');break;
+			case 'iciba': window.open('http://www.iciba.com/');break;
+			case 'bing-dict': window.open('http://dict.bing.com.cn/');break;
+			case 'cnki-trans': window.open('http://dict.cnki.net/');break;
+			case 'urban-dict': window.open('http://www.urbandictionary.com/');break;
+			case 'google-trans': window.open('https://translate.google.cn/');break;
+			case 'baidu-fanyi': window.open('http://fanyi.baidu.com/');break;
+			case 'youdao-trans': window.open('http://fanyi.youdao.com/');break;
+			case 'douban': window.open('http://www.douban.com/');break;
+			case 'google-scholar': window.open('http://scholar.google.com.hk/');break;
+			case 'baidu-wenku': window.open('http://wenku.baidu.com/');break;
+			case 'doc88': window.open('http://www.doc88.com/');break;
+			case 'docin': window.open('http://www.docin.com/');break;
+			case 'zaoshu': window.open('http://www.zaoshu.com/');break;
+			case 'nstl': window.open('http://www.nstl.gov.cn/NSTL/');break;
+			case 'cnki': window.open('http://www.cnki.net/');break;
+			case 'wanfang': window.open('http://www.wanfangdata.com.cn/');break;
+			case 'cqvip': window.open('http://www.cqvip.com/');break;
+			case 'onemine': window.open('http://www.onemine.org/');break;
+			case 'arxiv': window.open('http://arxiv.org/');break;
+			case 'springerlink': window.open('http://link.springer.com/');break;
+			case 'wolfram-alpha': window.open('http://www.wolframalpha.com/');break;
+		}
+	}
+}
