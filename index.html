@@ -131,45 +131,6 @@ return false;
           
 		  <div class="grid-16-8 clearfix">
           <div class="aside">
-		  	     <ul class="topic-list">
-			<a href="" id="news-title-link"><p><span id="news-title"></span></p></a>
-			<p><span id="score-3"></span></p>
-			<p><span id="next-post-news">next post &rarr;</span></p>
-		  </ul>
-		  
-	      
-<SCRIPT language=javascript>
-var subreddit = "News";
-var apiurl = 'https://www.reddit.com/r/' + subreddit + '/.json?';
-var postnum = 1;
-	
-function updatepost() {
-    $.ajax({
-      type: "GET",
-      url: apiurl,
-      async: false,
-      dataType: 'json',
-      success: function(data){ 
-        var title = data["data"]["children"][postnum]["data"]["title"];
-		var score = data["data"]["children"][postnum]["data"]["score"];
-		  	$("#news-title").empty().prepend(title);
-		  	$("#score-3").empty().append('<i class="fa fa-heart"> </i>' + ' ' + score);
-		  	$("#news-title-link").attr("href","https://reddit.com" + data["data"]["children"][postnum]["data"]["permalink"]);
-      	}, 
-      	error: function(errorMessage){
-        	alert("Reddit ajax call failed");
-  		}      
-    }); // END ajax call
-} // End Update Post function
-updatepost();
-	
-$("#next-post-news").click(function(){
-	postnum = postnum+2;
-	updatepost();
-});	
-	
-});	
-</script>  
 		  <h2>技多不压身</h2>
             <ul class="topic-list">
             	<li><a href="http://open.163.com/" >网易公开课</a></li>
