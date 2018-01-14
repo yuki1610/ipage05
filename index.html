@@ -12,7 +12,15 @@
             
 <div id="searchMod" class="searchMod" align="center">
 
-<form name="search_form" onsubmit="return gowhere(this)">
+	<form action="http://www.sogou.com/web"  name="sogou_queryform">
+<tr>
+<td valign="top"><a href="http://www.gougou.com/search?search=%s&id=1"></a></td>
+<td>
+<input type="text" size="40" name="query">
+<input type="Submit" value=" 搜 索 "></td>
+</tr>
+</form>
+	
 	 <!-- 搜索引擎
 <table class="search_type" align=center border=0 cellPadding=0 cellSpacing=0><tr><td class="search_type">
 		<INPUT name=myselectvalue type=hidden value=1 />
@@ -24,12 +32,8 @@
 		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=6 />豆瓣
 		<INPUT name=myselect onclick="javascript:this.form.myselectvalue.value=this.value;gowhere(search_form);" type=radio value=7 />淘宝
 	</TD></TR></table>
- -->
-	<table align=center border=0 cellPadding=0 cellSpacing=0>
-			<input id="search_wd" class="search_wd" type=text autofocus="autofocus" maxlength="100" value="" />
-			<input id="search_go" class="search_go" type="submit" value="搜索" />
-	</table>
-</form>
+
+
 
 <SCRIPT language=javascript>
 var search_default = 2 //设定默认搜索，与myselect标签中的value值对应
@@ -86,7 +90,7 @@ return false;
 
 </div>
       </div>
-
+ -->
       <div id="content">
         <h1></h1>
         <div class="grid-16-8 clearfix">
